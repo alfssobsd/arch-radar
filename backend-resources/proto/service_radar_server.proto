@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+service ServiceRadarServer {
+  rpc GetServices (ListServicesRequest) returns (ListServicesResponse) {}
+}
+
+message ListServicesRequest {
+  string lang_id = 1;
+}
+
+
+message ServiceResponse {
+  string uuid = 1;
+  string title = 2;
+}
+
+message ListServicesResponse {
+  repeated ServiceResponse items = 1;
+}
