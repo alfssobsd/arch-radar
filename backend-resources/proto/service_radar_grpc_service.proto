@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-service ServiceRadarServer {
+service ServiceRadarGrpcService {
   rpc GetServices (ListServicesRequest) returns (ListServicesResponse) {}
 }
 
