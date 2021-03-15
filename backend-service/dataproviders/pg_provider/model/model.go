@@ -9,6 +9,11 @@ var Columns = struct {
 	Service struct {
 		ID, Title, Description string
 	}
+	ServicesConnection struct {
+		ServiceAUuid, ServiceBUuid, DirectionType, Description string
+
+		ServiceAUuidRel, ServiceBUuidRel string
+	}
 	ServicesDictionary struct {
 		ServiceUuid, DictionaryUuid string
 
@@ -31,6 +36,19 @@ var Columns = struct {
 		Title:       "title",
 		Description: "description",
 	},
+	ServicesConnection: struct {
+		ServiceAUuid, ServiceBUuid, DirectionType, Description string
+
+		ServiceAUuidRel, ServiceBUuidRel string
+	}{
+		ServiceAUuid:  "service_a_uuid",
+		ServiceBUuid:  "service_b_uuid",
+		DirectionType: "direction_type",
+		Description:   "description",
+
+		ServiceAUuidRel: "ServiceAUuidRel",
+		ServiceBUuidRel: "ServiceBUuidRel",
+	},
 	ServicesDictionary: struct {
 		ServiceUuid, DictionaryUuid string
 
@@ -51,6 +69,9 @@ var Tables = struct {
 	Service struct {
 		Name, Alias string
 	}
+	ServicesConnection struct {
+		Name, Alias string
+	}
 	ServicesDictionary struct {
 		Name, Alias string
 	}
@@ -65,6 +86,12 @@ var Tables = struct {
 		Name, Alias string
 	}{
 		Name:  "services",
+		Alias: "t",
+	},
+	ServicesConnection: struct {
+		Name, Alias string
+	}{
+		Name:  "services_connections",
 		Alias: "t",
 	},
 	ServicesDictionary: struct {
@@ -91,6 +118,18 @@ type Service struct {
 	ID          string  `pg:"service_uuid,pk,type:uuid"`
 	Title       string  `pg:"title,use_zero"`
 	Description *string `pg:"description"`
+}
+
+type ServicesConnection struct {
+	tableName struct{} `pg:"services_connections,alias:t,,discard_unknown_columns"`
+
+	ServiceAUuid  string `pg:"service_a_uuid,type:uuid,use_zero"`
+	ServiceBUuid  string `pg:"service_b_uuid,type:uuid,use_zero"`
+	DirectionType string `pg:"direction_type,use_zero"`
+	Description   string `pg:"description,use_zero"`
+
+	ServiceAUuidRel *Service `pg:"fk:service_a_uuid"`
+	ServiceBUuidRel *Service `pg:"fk:service_b_uuid"`
 }
 
 type ServicesDictionary struct {

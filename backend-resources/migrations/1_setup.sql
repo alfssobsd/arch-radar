@@ -3,7 +3,7 @@ CREATE TABLE dictionaries
     "dictionary_uuid" uuid    NOT NULL,
     "title"           varchar NOT NULL,
     "color"           varchar NOT NULL,
-    "dict_type"       varchar NOT NULL,
+    "dict_type"       varchar NOT NULL, -- LANG,AREAS,TECH_LAYER,DATABASE,TEAM,LOCATION
     "description"     text NULL,
     primary key (dictionary_uuid)
 );
@@ -32,3 +32,18 @@ CREATE INDEX services_dictionaries_service_idx
     ON services_dictionaries(service_uuid);
 CREATE UNIQUE INDEX services_dictionaries_unq
     ON services_dictionaries(service_uuid,dictionary_uuid);
+
+
+CREATE TABLE "services_connections" (
+    "service_a_uuid" uuid NOT NULL references "services",
+    "service_b_uuid" uuid NOT NULL references "services",
+    "direction_type" varchar NOT NULL, -- IN, OUT, INOUT
+    "description" varchar NOT NULL
+);
+
+CREATE INDEX services_connections_unq
+    ON services_connections(service_a_uuid,service_b_uuid);
+CREATE INDEX services_connections_a_idx
+    ON services_connections(service_a_uuid);
+CREATE INDEX services_connections_b_idx
+    ON services_connections(service_b_uuid);
