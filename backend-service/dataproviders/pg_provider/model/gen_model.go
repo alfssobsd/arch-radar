@@ -2,6 +2,10 @@
 //lint:file-ignore U1000 ignore unused code, it's generated
 package model
 
+import (
+	"github.com/google/uuid"
+)
+
 var Columns = struct {
 	Dictionary struct {
 		ID, Title, Color, DictType, Description string
@@ -103,40 +107,40 @@ var Tables = struct {
 }
 
 type Dictionary struct {
-	tableName struct{} `pg:"dictionaries,alias:t,,discard_unknown_columns"`
+	tableName struct{} `pg:"dictionaries,alias:t,discard_unknown_columns"`
 
-	ID          string  `pg:"dictionary_uuid,pk,type:uuid"`
-	Title       string  `pg:"title,use_zero"`
-	Color       string  `pg:"color,use_zero"`
-	DictType    string  `pg:"dict_type,use_zero"`
-	Description *string `pg:"description"`
+	ID          uuid.UUID `pg:"dictionary_uuid,pk,type:uuid"`
+	Title       string    `pg:"title,use_zero"`
+	Color       string    `pg:"color,use_zero"`
+	DictType    string    `pg:"dict_type,use_zero"`
+	Description *string   `pg:"description"`
 }
 
 type Service struct {
-	tableName struct{} `pg:"services,alias:t,,discard_unknown_columns"`
+	tableName struct{} `pg:"services,alias:t,discard_unknown_columns"`
 
-	ID          string  `pg:"service_uuid,pk,type:uuid"`
-	Title       string  `pg:"title,use_zero"`
-	Description *string `pg:"description"`
+	ID          uuid.UUID `pg:"service_uuid,pk,type:uuid"`
+	Title       string    `pg:"title,use_zero"`
+	Description *string   `pg:"description"`
 }
 
 type ServicesConnection struct {
-	tableName struct{} `pg:"services_connections,alias:t,,discard_unknown_columns"`
+	tableName struct{} `pg:"services_connections,alias:t,discard_unknown_columns"`
 
-	ServiceAUuid  string `pg:"service_a_uuid,type:uuid,use_zero"`
-	ServiceBUuid  string `pg:"service_b_uuid,type:uuid,use_zero"`
-	DirectionType string `pg:"direction_type,use_zero"`
-	Description   string `pg:"description,use_zero"`
+	ServiceAUuid  uuid.UUID `pg:"service_a_uuid,type:uuid,use_zero"`
+	ServiceBUuid  uuid.UUID `pg:"service_b_uuid,type:uuid,use_zero"`
+	DirectionType string    `pg:"direction_type,use_zero"`
+	Description   string    `pg:"description,use_zero"`
 
 	ServiceAUuidRel *Service `pg:"fk:service_a_uuid"`
 	ServiceBUuidRel *Service `pg:"fk:service_b_uuid"`
 }
 
 type ServicesDictionary struct {
-	tableName struct{} `pg:"services_dictionaries,alias:t,,discard_unknown_columns"`
+	tableName struct{} `pg:"services_dictionaries,alias:t,discard_unknown_columns"`
 
-	ServiceUuid    string `pg:"service_uuid,type:uuid,use_zero"`
-	DictionaryUuid string `pg:"dictionary_uuid,type:uuid,use_zero"`
+	ServiceUuid    uuid.UUID `pg:"service_uuid,type:uuid,use_zero"`
+	DictionaryUuid uuid.UUID `pg:"dictionary_uuid,type:uuid,use_zero"`
 
 	DictionaryUuidRel *Dictionary `pg:"fk:dictionary_uuid"`
 	ServiceUuidRel    *Service    `pg:"fk:service_uuid"`
