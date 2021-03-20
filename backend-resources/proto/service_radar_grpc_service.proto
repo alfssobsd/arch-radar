@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-import "common.proto";
+import "optional_types.proto";
 option go_package = "./entrypoints/grpc_entrypoint/gen";
 
 
@@ -14,8 +14,8 @@ message ListServicesRequest {
 
 
 message ServiceResponse {
-  UUIDOptional serviceUUID = 1;
-  string title = 2;
+  OptionalTypes.UUIDOptional serviceUUID = 1;
+  string Title = 2;
 }
 
 message ListServicesResponse {

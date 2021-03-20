@@ -21,7 +21,6 @@ func (s *serviceRadarGrpcServiceServer) GetServices(ctx context.Context, r *pb.L
 	result, _ := s.servicesUseCase.ListByPage(1)
 	var responses []*pb.ServiceResponse
 	for _, v := range result {
-		println(v.UUID.String())
 		responses = append(responses, &pb.ServiceResponse{
 			ServiceUUID: &pb.UUIDOptional{Value: v.UUID.String()},
 			Title:       v.Title,
