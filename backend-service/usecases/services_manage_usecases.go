@@ -6,7 +6,7 @@ import (
 
 type ServicesManageUseCase interface {
 	CreateService() error
-	ListByPage(pageNumber int) ([]ServiceItemDto, error)
+	ListByPage(pageNumber int) ([]ServiceItemDTO, error)
 }
 type servicesManageUseCase struct {
 	serviceRepo pg_provider.ServiceRepo
@@ -20,16 +20,16 @@ func (uc *servicesManageUseCase) CreateService() error {
 	return nil
 }
 
-func (uc *servicesManageUseCase) ListByPage(pageNumber int) ([]ServiceItemDto, error) {
+func (uc *servicesManageUseCase) ListByPage(pageNumber int) ([]ServiceItemDTO, error) {
 	serviceList, err := uc.serviceRepo.List()
 	if err != nil {
 		return nil, err
 	}
 
-	var resultList []ServiceItemDto
+	var resultList []ServiceItemDTO
 
 	for _, service := range serviceList {
-		resultList = append(resultList, ServiceItemDto{
+		resultList = append(resultList, ServiceItemDTO{
 			UUID:  service.ID,
 			Title: service.Title,
 		})

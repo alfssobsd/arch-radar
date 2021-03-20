@@ -7,18 +7,18 @@ import (
 	"log"
 )
 
-func NewServiceRadarGrpcServiceServer(servicesUseCase usecases.ServicesManageUseCase) *serviceRadarGrpcServiceServer {
-	return &serviceRadarGrpcServiceServer{servicesUseCase}
+type serviceRadarGrpcServiceServer struct {
+	servicesManageUseCase usecases.ServicesManageUseCase
 }
 
-type serviceRadarGrpcServiceServer struct {
-	servicesUseCase usecases.ServicesManageUseCase
+func NewServiceRadarGrpcServiceServer(servicesUseCase usecases.ServicesManageUseCase) *serviceRadarGrpcServiceServer {
+	return &serviceRadarGrpcServiceServer{servicesUseCase}
 }
 
 func (s *serviceRadarGrpcServiceServer) GetServices(ctx context.Context, r *pb.ListServicesRequest) (*pb.ListServicesResponse, error) {
 	log.Print("ServiceRadarServerServer.GetServices request -> " + r.String())
 
-	result, _ := s.servicesUseCase.ListByPage(1)
+	result, _ := s.servicesManageUseCase.ListByPage(1)
 	var responses []*pb.ServiceResponse
 	for _, v := range result {
 		responses = append(responses, &pb.ServiceResponse{

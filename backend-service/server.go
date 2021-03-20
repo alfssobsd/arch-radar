@@ -27,6 +27,9 @@ func main() {
 	pb.RegisterServiceRadarGrpcServiceServer(server, grpc_entrypoints.NewServiceRadarGrpcServiceServer(
 		usecases.NewServiceManageUseCase(pg_provider.NewServiceRepo(db))),
 	)
+	pb.RegisterDictionariesGrpcServiceServer(server, grpc_entrypoints.NewDictionariesGrpcServiceServer(
+		usecases.NewDictionariesManageUseCase(pg_provider.NewDictionaryRepo(db))),
+	)
 	reflection.Register(server)
 
 	lis, err := net.Listen("tcp", ":"+PORT)

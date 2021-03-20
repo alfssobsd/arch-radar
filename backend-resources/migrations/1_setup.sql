@@ -3,7 +3,7 @@ CREATE TABLE dictionaries
     "dictionary_uuid" uuid    NOT NULL,
     "title"           varchar NOT NULL,
     "color"           varchar NOT NULL,
-    "dict_type"       varchar NOT NULL, -- LANG,AREAS,TECH_LAYER,DATABASE,TEAM,LOCATION
+    "dict_type"       varchar NOT NULL, -- CODE_LANG,AREAS,TECH_LAYER,DATABASE,TEAM,LOCATION
     "description"     text NULL,
     primary key (dictionary_uuid)
 );
