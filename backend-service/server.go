@@ -2,8 +2,8 @@ package main
 
 import (
 	"arch-radar/backend-service/backend-service/dataproviders/pg_provider"
-	"arch-radar/backend-service/backend-service/entrypoints/grpc_entrypoint"
-	pb "arch-radar/backend-service/backend-service/entrypoints/grpc_entrypoint/gen"
+	"arch-radar/backend-service/backend-service/entrypoints/grpc_entrypoints"
+	pb "arch-radar/backend-service/backend-service/entrypoints/grpc_entrypoints/gen"
 	"arch-radar/backend-service/backend-service/usecases"
 	"github.com/go-pg/pg/v10"
 	"google.golang.org/grpc"
@@ -24,7 +24,7 @@ func main() {
 	defer db.Close()
 
 	server := grpc.NewServer()
-	pb.RegisterServiceRadarGrpcServiceServer(server, grpc_entrypoint.NewServiceRadarGrpcServiceServer(
+	pb.RegisterServiceRadarGrpcServiceServer(server, grpc_entrypoints.NewServiceRadarGrpcServiceServer(
 		usecases.NewServiceManageUseCase(pg_provider.NewServiceRepo(db))),
 	)
 	reflection.Register(server)

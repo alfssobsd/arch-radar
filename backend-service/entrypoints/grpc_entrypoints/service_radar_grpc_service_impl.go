@@ -1,7 +1,7 @@
-package grpc_entrypoint
+package grpc_entrypoints
 
 import (
-	pb "arch-radar/backend-service/backend-service/entrypoints/grpc_entrypoint/gen"
+	pb "arch-radar/backend-service/backend-service/entrypoints/grpc_entrypoints/gen"
 	"arch-radar/backend-service/backend-service/usecases"
 	"context"
 	"log"
