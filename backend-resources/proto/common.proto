@@ -1,0 +1,6 @@
+syntax = "proto3";
+option go_package = "./entrypoints/grpc_entrypoint/gen";
+
+message UUIDOptional {
+  string value = 1;
+}

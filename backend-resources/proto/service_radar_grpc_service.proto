@@ -1,5 +1,9 @@
 syntax = "proto3";
 
+import "common.proto";
+option go_package = "./entrypoints/grpc_entrypoint/gen";
+
+
 service ServiceRadarGrpcService {
   rpc GetServices (ListServicesRequest) returns (ListServicesResponse) {}
 }
@@ -10,7 +14,7 @@ message ListServicesRequest {
 
 
 message ServiceResponse {
-  string uuid = 1;
+  UUIDOptional serviceUUID = 1;
   string title = 2;
 }
 
