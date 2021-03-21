@@ -14,41 +14,41 @@ service DictionariesGrpcService {
 }
 
 enum DictionaryType {
-  AREA = 0;
-  TEAM = 1;
+  AREA      = 0;
+  TEAM      = 1;
   CODE_LANG = 2;
 }
 
 message DictionaryCreateRequest {
-  OptionalTypes.UUIDOptional   dictionary_uuid= 1;
-  DictionaryType dict_type                    = 2;
-  string title                                = 3;
-  string color                                = 4;
-  string description                          = 5;
+  string dictionary_uuid   = 1;
+  DictionaryType dict_type = 2;
+  string title             = 3;
+  string color             = 4;
+  string description       = 5;
 }
 
 message DictionaryUpdateRequest {
-  OptionalTypes.UUIDOptional dictionary_uuid  = 1;
-  DictionaryType dict_type                    = 2;
-  string title                                = 3;
-  string color                                = 4;
-  string description                          = 5;
+  string dictionary_uuid   = 1;
+  DictionaryType dict_type = 2;
+  string title             = 3;
+  string color             = 4;
+  string description       = 5;
 }
 message DictionaryDeleteRequest {
-  OptionalTypes.UUIDOptional dictionary_uuid   = 1;
+  string dictionary_uuid = 1;
 }
 message DictionaryListRequest {
-  DictionaryType dict_type                    = 1;
+  DictionaryType dict_type = 1;
 }
 message DictionaryResponse {
-  OptionalTypes.UUIDOptional dictionary_uuid  = 1;
-  DictionaryType dict_type                    = 2;
-  string title                                = 3;
-  string color                                = 4;
-  string description                          = 5;
+  string dictionary_uuid   = 1;
+  DictionaryType dict_type = 2;
+  string title             = 3;
+  string color             = 4;
+  string description       = 5;
 }
 message DictionaryListResponse {
-  repeated DictionaryResponse items = 1;
-  CommonTypes.PageInfoItem page_info = 2;
+  repeated DictionaryResponse items    = 1;
+  CommonTypes.PageInfoItem page_info   = 2;
 }
 

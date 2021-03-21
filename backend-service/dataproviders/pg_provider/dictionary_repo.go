@@ -14,6 +14,7 @@ type dictionaryRepo struct {
 }
 
 type DictionaryRepo interface {
+	Create(*model.Dictionary) error
 	List() ([]model.Dictionary, error)
 }
 
@@ -25,4 +26,9 @@ func (r *dictionaryRepo) List() ([]model.Dictionary, error) {
 	}
 
 	return dictionaryList, err
+}
+
+func (r *dictionaryRepo) Create(dictionary *model.Dictionary) error {
+	_, err := r.db.Model(dictionary).Insert()
+	return err
 }

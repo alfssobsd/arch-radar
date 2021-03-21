@@ -5,6 +5,7 @@ import (
 	"arch-radar/backend-service/backend-service/usecases"
 	"context"
 	"github.com/golang/protobuf/ptypes/empty"
+	"github.com/google/uuid"
 	"log"
 )
 
@@ -32,7 +33,7 @@ func (s *dictionariesGrpcServiceServer) GetDictionaryList(ctx context.Context, r
 
 	for _, v := range useCaseResult.Items {
 		grpcResponse.Items = append(grpcResponse.Items, &pb.DictionaryResponse{
-			DictionaryUuid: &pb.UUIDOptional{Value: v.AreaUUID.String()},
+			DictionaryUuid: v.AreaUUID.String(),
 			DictType:       pb.DictionaryType_AREA,
 			Title:          v.Title,
 			Color:          v.Color,
@@ -45,7 +46,19 @@ func (s *dictionariesGrpcServiceServer) GetDictionaryList(ctx context.Context, r
 
 // Create Area Item
 func (s *dictionariesGrpcServiceServer) CreateDictionaryItem(ctx context.Context, req *pb.DictionaryCreateRequest) (*pb.DictionaryResponse, error) {
-	return nil, nil
+	s.dictionariesManageUseCase.CreateArea(usecases.CreateAreaInDTO{
+		AreaUUID:    uuid.MustParse(req.DictionaryUuid),
+		Title:       req.Title,
+		Color:       req.Color,
+		Description: &req.Description,
+	})
+	return &pb.DictionaryResponse{
+		DictionaryUuid: "",
+		DictType:       0,
+		Title:          "",
+		Color:          "",
+		Description:    "",
+	}, nil
 }
 
 // Delete Area Item
