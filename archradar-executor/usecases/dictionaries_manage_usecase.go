@@ -1,8 +1,8 @@
 package usecases
 
 import (
-	"arch-radar/backend-service/backend-service/dataproviders/pg_provider"
-	"arch-radar/backend-service/backend-service/dataproviders/pg_provider/model"
+	"github.com/alfssobsd/arch-radar/archradar-executor/dataproviders/pg_provider"
+	"github.com/alfssobsd/arch-radar/archradar-executor/dataproviders/pg_provider/model"
 )
 
 type DictionariesManageUseCase interface {

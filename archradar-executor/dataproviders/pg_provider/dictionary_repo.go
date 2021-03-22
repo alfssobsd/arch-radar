@@ -1,7 +1,7 @@
 package pg_provider
 
 import (
-	"arch-radar/backend-service/backend-service/dataproviders/pg_provider/model"
+	"github.com/alfssobsd/arch-radar/archradar-executor/dataproviders/pg_provider/model"
 	"github.com/go-pg/pg/v10"
 )
 

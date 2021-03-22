@@ -1,4 +1,4 @@
-module arch-radar/backend-service
+module github.com/alfssobsd/arch-radar
 
 go 1.16
 

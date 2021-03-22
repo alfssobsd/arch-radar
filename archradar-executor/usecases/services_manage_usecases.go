@@ -1,7 +1,7 @@
 package usecases
 
 import (
-	"arch-radar/backend-service/backend-service/dataproviders/pg_provider"
+	"github.com/alfssobsd/arch-radar/archradar-executor/dataproviders/pg_provider"
 )
 
 type ServicesManageUseCase interface {

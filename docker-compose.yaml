@@ -11,8 +11,8 @@ services:
   protobufs:
     image: "namely/protoc-all:1.34_5"
     volumes:
-      - ./backend-resources/proto:/defs
-      - ./backend-service/:/backend-service
-    command: "-i /opt/include -f *.proto -l go -o /backend-service"
+      - ./archradar-resources/proto:/defs
+      - ./archradar-executor/:/archradar-executor
+    command: "-i /opt/include -f *.proto -l go -o /archradar-executor"
 volumes:
   database-data: # named volumes can be managed easier using docker-compose

@@ -1,10 +1,10 @@
 package main
 
 import (
-	"arch-radar/backend-service/backend-service/dataproviders/pg_provider"
-	"arch-radar/backend-service/backend-service/entrypoints/grpc_entrypoints"
-	pb "arch-radar/backend-service/backend-service/entrypoints/grpc_entrypoints/gen"
-	"arch-radar/backend-service/backend-service/usecases"
+	"github.com/alfssobsd/arch-radar/archradar-executor/dataproviders/pg_provider"
+	"github.com/alfssobsd/arch-radar/archradar-executor/entrypoints/grpc_entrypoints"
+	pb "github.com/alfssobsd/arch-radar/archradar-executor/entrypoints/grpc_entrypoints/gen"
+	"github.com/alfssobsd/arch-radar/archradar-executor/usecases"
 	"github.com/go-pg/pg/v10"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
