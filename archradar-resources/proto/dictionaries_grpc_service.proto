@@ -3,7 +3,7 @@ syntax = "proto3";
 import "common_types.proto";
 import "optional_types.proto";
 import "google/protobuf/empty.proto";
-option go_package = "./entrypoints/grpc_entrypoints/gen";
+option go_package = "github.com/alfssobsd/arch-radar/archradar-grpc";
 
 
 service DictionariesGrpcService {

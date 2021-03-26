@@ -1,7 +1,7 @@
 syntax = "proto3";
 package CommonTypes;
 
-option go_package = "./entrypoints/grpc_entrypoints/gen";
+option go_package = "github.com/alfssobsd/arch-radar/archradar-grpc";
 
 message PageInfoItem {
   int64 page_limit = 1;

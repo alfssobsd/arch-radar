@@ -2,8 +2,8 @@ package grpc_entrypoints
 
 import (
 	"context"
-	pb "github.com/alfssobsd/arch-radar/archradar-executor/entrypoints/grpc_entrypoints/gen"
 	"github.com/alfssobsd/arch-radar/archradar-executor/usecases"
+	pb "github.com/alfssobsd/arch-radar/archradar-grpc"
 	"github.com/golang/protobuf/ptypes/empty"
 	"github.com/google/uuid"
 	"log"
