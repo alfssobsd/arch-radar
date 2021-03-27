@@ -10,14 +10,14 @@ type DictionariesManageUseCase interface {
 	ShowAreaList() (ShowAreaListReplyDTO, error)
 }
 
-type dictionariesManageUseCase struct {
+type dictionaryManageUseCase struct {
 	dictionaryRepo pg_provider.DictionaryRepo
 }
 
-func NewDictionariesManageUseCase(dictionaryRepo pg_provider.DictionaryRepo) *dictionariesManageUseCase {
-	return &dictionariesManageUseCase{dictionaryRepo}
+func NewDictionaryManageUseCase(dictionaryRepo pg_provider.DictionaryRepo) *dictionaryManageUseCase {
+	return &dictionaryManageUseCase{dictionaryRepo}
 }
-func (uc *dictionariesManageUseCase) CreateArea(dto CreateAreaInDTO) (CreateAreaReplyDTO, error) {
+func (uc *dictionaryManageUseCase) CreateArea(dto CreateAreaInDTO) (CreateAreaReplyDTO, error) {
 	err := uc.dictionaryRepo.Create(&model.Dictionary{
 		ID:          dto.AreaUUID,
 		Title:       dto.Title,
@@ -29,7 +29,7 @@ func (uc *dictionariesManageUseCase) CreateArea(dto CreateAreaInDTO) (CreateArea
 	return CreateAreaReplyDTO{}, err
 }
 
-func (uc *dictionariesManageUseCase) ShowAreaList() (ShowAreaListReplyDTO, error) {
+func (uc *dictionaryManageUseCase) ShowAreaList() (ShowAreaListReplyDTO, error) {
 	dictList, err := uc.dictionaryRepo.List()
 
 	var areaList []AreaItemDTO

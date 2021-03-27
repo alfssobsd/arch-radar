@@ -3,8 +3,8 @@ package main
 import (
 	"github.com/alfssobsd/arch-radar/archradar-executor/dataproviders/pg_provider"
 	"github.com/alfssobsd/arch-radar/archradar-executor/entrypoints/grpc_entrypoints"
-	pb "github.com/alfssobsd/arch-radar/archradar-executor/entrypoints/grpc_entrypoints/gen"
 	"github.com/alfssobsd/arch-radar/archradar-executor/usecases"
+	pb "github.com/alfssobsd/arch-radar/archradar-grpc"
 	"github.com/go-pg/pg/v10"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
@@ -24,11 +24,11 @@ func main() {
 	defer db.Close()
 
 	server := grpc.NewServer()
-	pb.RegisterServiceRadarGrpcServiceServer(server, grpc_entrypoints.NewServiceRadarGrpcServiceServer(
+	pb.RegisterServiceManageGrpcServiceServer(server, grpc_entrypoints.NewServiceManageGrpcService(
 		usecases.NewServiceManageUseCase(pg_provider.NewServiceRepo(db))),
 	)
-	pb.RegisterDictionariesGrpcServiceServer(server, grpc_entrypoints.NewDictionariesGrpcServiceServer(
-		usecases.NewDictionariesManageUseCase(pg_provider.NewDictionaryRepo(db))),
+	pb.RegisterDictionaryManageGrpcServiceServer(server, grpc_entrypoints.NewDictionaryManageGrpcServiceServer(
+		usecases.NewDictionaryManageUseCase(pg_provider.NewDictionaryRepo(db))),
 	)
 	reflection.Register(server)
 

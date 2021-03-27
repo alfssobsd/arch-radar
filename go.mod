@@ -3,6 +3,7 @@ module github.com/alfssobsd/arch-radar
 go 1.16
 
 require (
+	github.com/envoyproxy/protoc-gen-validate v0.5.0
 	github.com/go-pg/pg/v10 v10.8.0
 	github.com/golang/protobuf v1.4.3
 	google.golang.org/protobuf v1.25.0

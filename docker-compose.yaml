@@ -12,6 +12,6 @@ services:
     image: "namely/protoc-all:1.34_5"
     volumes:
       - ./:/defs
-    command: "-i /opt/include -l go  -d archradar-resources/proto --go-source-relative -o archradar-grpc"
+    command: "-i /opt/include -l go  -d archradar-resources/proto --go-source-relative --with-validator --validator-source-relative -o archradar-grpc"
 volumes:
   database-data: # named volumes can be managed easier using docker-compose

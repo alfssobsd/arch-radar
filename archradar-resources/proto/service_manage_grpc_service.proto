@@ -4,7 +4,7 @@ import "optional_types.proto";
 option go_package = "github.com/alfssobsd/arch-radar/archradar-grpc";
 
 
-service ServiceRadarGrpcService {
+service ServiceManageGrpcService {
   rpc GetServices (ListServicesRequest) returns (ListServicesResponse) {}
 }
 

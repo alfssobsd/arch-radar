@@ -2,11 +2,12 @@ syntax = "proto3";
 
 import "common_types.proto";
 import "optional_types.proto";
-import "google/protobuf/empty.proto";
+import "google/protobuf/empty.proto"; //https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/empty.proto
+import "validate/validate.proto"; //https://github.com/envoyproxy/protoc-gen-validate
 option go_package = "github.com/alfssobsd/arch-radar/archradar-grpc";
 
 
-service DictionariesGrpcService {
+service DictionaryManageGrpcService {
   rpc GetDictionaryList (DictionaryListRequest) returns (DictionaryListResponse) {}
   rpc CreateDictionaryItem (DictionaryCreateRequest) returns (DictionaryResponse) {}
   rpc DeleteDictionaryItem (DictionaryDeleteRequest) returns (google.protobuf.Empty) {}
@@ -20,28 +21,28 @@ enum DictionaryType {
 }
 
 message DictionaryCreateRequest {
-  string dictionary_uuid   = 1;
+  string dictionary_uuid   = 1 [(validate.rules).string.uuid = true];
   DictionaryType dict_type = 2;
-  string title             = 3;
-  string color             = 4;
+  string title             = 3 [(validate.rules).string = {min_len: 4, max_len: 128}];
+  string color             = 4 [(validate.rules).string.len = 7];
   string description       = 5;
 }
 
 message DictionaryUpdateRequest {
-  string dictionary_uuid   = 1;
+  string dictionary_uuid   = 1 [(validate.rules).string.uuid = true];
   DictionaryType dict_type = 2;
   string title             = 3;
   string color             = 4;
   string description       = 5;
 }
 message DictionaryDeleteRequest {
-  string dictionary_uuid = 1;
+  string dictionary_uuid = 1 [(validate.rules).string.uuid = true];
 }
 message DictionaryListRequest {
   DictionaryType dict_type = 1;
 }
 message DictionaryResponse {
-  string dictionary_uuid   = 1;
+  string dictionary_uuid   = 1 [(validate.rules).string.uuid = true];
   DictionaryType dict_type = 2;
   string title             = 3;
   string color             = 4;

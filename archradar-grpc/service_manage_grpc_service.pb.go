@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.25.0-devel
 // 	protoc        v3.13.0
-// source: service_radar_grpc_service.proto
+// source: service_manage_grpc_service.proto
 
 package archradar_grpc
 
@@ -35,7 +35,7 @@ type ListServicesRequest struct {
 func (x *ListServicesRequest) Reset() {
 	*x = ListServicesRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_service_radar_grpc_service_proto_msgTypes[0]
+		mi := &file_service_manage_grpc_service_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -48,7 +48,7 @@ func (x *ListServicesRequest) String() string {
 func (*ListServicesRequest) ProtoMessage() {}
 
 func (x *ListServicesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_service_radar_grpc_service_proto_msgTypes[0]
+	mi := &file_service_manage_grpc_service_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -61,7 +61,7 @@ func (x *ListServicesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListServicesRequest.ProtoReflect.Descriptor instead.
 func (*ListServicesRequest) Descriptor() ([]byte, []int) {
-	return file_service_radar_grpc_service_proto_rawDescGZIP(), []int{0}
+	return file_service_manage_grpc_service_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *ListServicesRequest) GetLangId() string {
@@ -83,7 +83,7 @@ type ServiceResponse struct {
 func (x *ServiceResponse) Reset() {
 	*x = ServiceResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_service_radar_grpc_service_proto_msgTypes[1]
+		mi := &file_service_manage_grpc_service_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -96,7 +96,7 @@ func (x *ServiceResponse) String() string {
 func (*ServiceResponse) ProtoMessage() {}
 
 func (x *ServiceResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_service_radar_grpc_service_proto_msgTypes[1]
+	mi := &file_service_manage_grpc_service_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -109,7 +109,7 @@ func (x *ServiceResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ServiceResponse.ProtoReflect.Descriptor instead.
 func (*ServiceResponse) Descriptor() ([]byte, []int) {
-	return file_service_radar_grpc_service_proto_rawDescGZIP(), []int{1}
+	return file_service_manage_grpc_service_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *ServiceResponse) GetServiceUUID() *UUIDOptional {
@@ -137,7 +137,7 @@ type ListServicesResponse struct {
 func (x *ListServicesResponse) Reset() {
 	*x = ListServicesResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_service_radar_grpc_service_proto_msgTypes[2]
+		mi := &file_service_manage_grpc_service_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -150,7 +150,7 @@ func (x *ListServicesResponse) String() string {
 func (*ListServicesResponse) ProtoMessage() {}
 
 func (x *ListServicesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_service_radar_grpc_service_proto_msgTypes[2]
+	mi := &file_service_manage_grpc_service_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -163,7 +163,7 @@ func (x *ListServicesResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListServicesResponse.ProtoReflect.Descriptor instead.
 func (*ListServicesResponse) Descriptor() ([]byte, []int) {
-	return file_service_radar_grpc_service_proto_rawDescGZIP(), []int{2}
+	return file_service_manage_grpc_service_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *ListServicesResponse) GetItems() []*ServiceResponse {
@@ -173,62 +173,62 @@ func (x *ListServicesResponse) GetItems() []*ServiceResponse {
 	return nil
 }
 
-var File_service_radar_grpc_service_proto protoreflect.FileDescriptor
+var File_service_manage_grpc_service_proto protoreflect.FileDescriptor
 
-var file_service_radar_grpc_service_proto_rawDesc = []byte{
-	0x0a, 0x20, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x5f, 0x72, 0x61, 0x64, 0x61, 0x72, 0x5f,
-	0x67, 0x72, 0x70, 0x63, 0x5f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x70, 0x72, 0x6f,
-	0x74, 0x6f, 0x1a, 0x14, 0x6f, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x61, 0x6c, 0x5f, 0x74, 0x79, 0x70,
-	0x65, 0x73, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0x2e, 0x0a, 0x13, 0x4c, 0x69, 0x73, 0x74,
-	0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12,
-	0x17, 0x0a, 0x07, 0x6c, 0x61, 0x6e, 0x67, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09,
-	0x52, 0x06, 0x6c, 0x61, 0x6e, 0x67, 0x49, 0x64, 0x22, 0x66, 0x0a, 0x0f, 0x53, 0x65, 0x72, 0x76,
-	0x69, 0x63, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x3d, 0x0a, 0x0b, 0x73,
-	0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x55, 0x55, 0x49, 0x44, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b,
-	0x32, 0x1b, 0x2e, 0x4f, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x61, 0x6c, 0x54, 0x79, 0x70, 0x65, 0x73,
-	0x2e, 0x55, 0x55, 0x49, 0x44, 0x4f, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x61, 0x6c, 0x52, 0x0b, 0x73,
-	0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x55, 0x55, 0x49, 0x44, 0x12, 0x14, 0x0a, 0x05, 0x54, 0x69,
-	0x74, 0x6c, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x54, 0x69, 0x74, 0x6c, 0x65,
-	0x22, 0x3e, 0x0a, 0x14, 0x4c, 0x69, 0x73, 0x74, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73,
-	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x26, 0x0a, 0x05, 0x69, 0x74, 0x65, 0x6d,
-	0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x10, 0x2e, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63,
-	0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x52, 0x05, 0x69, 0x74, 0x65, 0x6d, 0x73,
-	0x32, 0x57, 0x0a, 0x17, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x52, 0x61, 0x64, 0x61, 0x72,
-	0x47, 0x72, 0x70, 0x63, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x3c, 0x0a, 0x0b, 0x47,
-	0x65, 0x74, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x12, 0x14, 0x2e, 0x4c, 0x69, 0x73,
+var file_service_manage_grpc_service_proto_rawDesc = []byte{
+	0x0a, 0x21, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x5f, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65,
+	0x5f, 0x67, 0x72, 0x70, 0x63, 0x5f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x70, 0x72,
+	0x6f, 0x74, 0x6f, 0x1a, 0x14, 0x6f, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x61, 0x6c, 0x5f, 0x74, 0x79,
+	0x70, 0x65, 0x73, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0x2e, 0x0a, 0x13, 0x4c, 0x69, 0x73,
 	0x74, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
-	0x1a, 0x15, 0x2e, 0x4c, 0x69, 0x73, 0x74, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x52,
-	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x42, 0x30, 0x5a, 0x2e, 0x67, 0x69, 0x74,
-	0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x61, 0x6c, 0x66, 0x73, 0x73, 0x6f, 0x62, 0x73,
-	0x64, 0x2f, 0x61, 0x72, 0x63, 0x68, 0x2d, 0x72, 0x61, 0x64, 0x61, 0x72, 0x2f, 0x61, 0x72, 0x63,
-	0x68, 0x72, 0x61, 0x64, 0x61, 0x72, 0x2d, 0x67, 0x72, 0x70, 0x63, 0x62, 0x06, 0x70, 0x72, 0x6f,
-	0x74, 0x6f, 0x33,
+	0x12, 0x17, 0x0a, 0x07, 0x6c, 0x61, 0x6e, 0x67, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28,
+	0x09, 0x52, 0x06, 0x6c, 0x61, 0x6e, 0x67, 0x49, 0x64, 0x22, 0x66, 0x0a, 0x0f, 0x53, 0x65, 0x72,
+	0x76, 0x69, 0x63, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x3d, 0x0a, 0x0b,
+	0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x55, 0x55, 0x49, 0x44, 0x18, 0x01, 0x20, 0x01, 0x28,
+	0x0b, 0x32, 0x1b, 0x2e, 0x4f, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x61, 0x6c, 0x54, 0x79, 0x70, 0x65,
+	0x73, 0x2e, 0x55, 0x55, 0x49, 0x44, 0x4f, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x61, 0x6c, 0x52, 0x0b,
+	0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x55, 0x55, 0x49, 0x44, 0x12, 0x14, 0x0a, 0x05, 0x54,
+	0x69, 0x74, 0x6c, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x54, 0x69, 0x74, 0x6c,
+	0x65, 0x22, 0x3e, 0x0a, 0x14, 0x4c, 0x69, 0x73, 0x74, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65,
+	0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x26, 0x0a, 0x05, 0x69, 0x74, 0x65,
+	0x6d, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x10, 0x2e, 0x53, 0x65, 0x72, 0x76, 0x69,
+	0x63, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x52, 0x05, 0x69, 0x74, 0x65, 0x6d,
+	0x73, 0x32, 0x58, 0x0a, 0x18, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x4d, 0x61, 0x6e, 0x61,
+	0x67, 0x65, 0x47, 0x72, 0x70, 0x63, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x3c, 0x0a,
+	0x0b, 0x47, 0x65, 0x74, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x12, 0x14, 0x2e, 0x4c,
+	0x69, 0x73, 0x74, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65,
+	0x73, 0x74, 0x1a, 0x15, 0x2e, 0x4c, 0x69, 0x73, 0x74, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65,
+	0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x42, 0x30, 0x5a, 0x2e, 0x67,
+	0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x61, 0x6c, 0x66, 0x73, 0x73, 0x6f,
+	0x62, 0x73, 0x64, 0x2f, 0x61, 0x72, 0x63, 0x68, 0x2d, 0x72, 0x61, 0x64, 0x61, 0x72, 0x2f, 0x61,
+	0x72, 0x63, 0x68, 0x72, 0x61, 0x64, 0x61, 0x72, 0x2d, 0x67, 0x72, 0x70, 0x63, 0x62, 0x06, 0x70,
+	0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
-	file_service_radar_grpc_service_proto_rawDescOnce sync.Once
-	file_service_radar_grpc_service_proto_rawDescData = file_service_radar_grpc_service_proto_rawDesc
+	file_service_manage_grpc_service_proto_rawDescOnce sync.Once
+	file_service_manage_grpc_service_proto_rawDescData = file_service_manage_grpc_service_proto_rawDesc
 )
 
-func file_service_radar_grpc_service_proto_rawDescGZIP() []byte {
-	file_service_radar_grpc_service_proto_rawDescOnce.Do(func() {
-		file_service_radar_grpc_service_proto_rawDescData = protoimpl.X.CompressGZIP(file_service_radar_grpc_service_proto_rawDescData)
+func file_service_manage_grpc_service_proto_rawDescGZIP() []byte {
+	file_service_manage_grpc_service_proto_rawDescOnce.Do(func() {
+		file_service_manage_grpc_service_proto_rawDescData = protoimpl.X.CompressGZIP(file_service_manage_grpc_service_proto_rawDescData)
 	})
-	return file_service_radar_grpc_service_proto_rawDescData
+	return file_service_manage_grpc_service_proto_rawDescData
 }
 
-var file_service_radar_grpc_service_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
-var file_service_radar_grpc_service_proto_goTypes = []interface{}{
+var file_service_manage_grpc_service_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
+var file_service_manage_grpc_service_proto_goTypes = []interface{}{
 	(*ListServicesRequest)(nil),  // 0: ListServicesRequest
 	(*ServiceResponse)(nil),      // 1: ServiceResponse
 	(*ListServicesResponse)(nil), // 2: ListServicesResponse
 	(*UUIDOptional)(nil),         // 3: OptionalTypes.UUIDOptional
 }
-var file_service_radar_grpc_service_proto_depIdxs = []int32{
+var file_service_manage_grpc_service_proto_depIdxs = []int32{
 	3, // 0: ServiceResponse.serviceUUID:type_name -> OptionalTypes.UUIDOptional
 	1, // 1: ListServicesResponse.items:type_name -> ServiceResponse
-	0, // 2: ServiceRadarGrpcService.GetServices:input_type -> ListServicesRequest
-	2, // 3: ServiceRadarGrpcService.GetServices:output_type -> ListServicesResponse
+	0, // 2: ServiceManageGrpcService.GetServices:input_type -> ListServicesRequest
+	2, // 3: ServiceManageGrpcService.GetServices:output_type -> ListServicesResponse
 	3, // [3:4] is the sub-list for method output_type
 	2, // [2:3] is the sub-list for method input_type
 	2, // [2:2] is the sub-list for extension type_name
@@ -236,14 +236,14 @@ var file_service_radar_grpc_service_proto_depIdxs = []int32{
 	0, // [0:2] is the sub-list for field type_name
 }
 
-func init() { file_service_radar_grpc_service_proto_init() }
-func file_service_radar_grpc_service_proto_init() {
-	if File_service_radar_grpc_service_proto != nil {
+func init() { file_service_manage_grpc_service_proto_init() }
+func file_service_manage_grpc_service_proto_init() {
+	if File_service_manage_grpc_service_proto != nil {
 		return
 	}
 	file_optional_types_proto_init()
 	if !protoimpl.UnsafeEnabled {
-		file_service_radar_grpc_service_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_service_manage_grpc_service_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListServicesRequest); i {
 			case 0:
 				return &v.state
@@ -255,7 +255,7 @@ func file_service_radar_grpc_service_proto_init() {
 				return nil
 			}
 		}
-		file_service_radar_grpc_service_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_service_manage_grpc_service_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ServiceResponse); i {
 			case 0:
 				return &v.state
@@ -267,7 +267,7 @@ func file_service_radar_grpc_service_proto_init() {
 				return nil
 			}
 		}
-		file_service_radar_grpc_service_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_service_manage_grpc_service_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListServicesResponse); i {
 			case 0:
 				return &v.state
@@ -284,20 +284,20 @@ func file_service_radar_grpc_service_proto_init() {
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_service_radar_grpc_service_proto_rawDesc,
+			RawDescriptor: file_service_manage_grpc_service_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   3,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_service_radar_grpc_service_proto_goTypes,
-		DependencyIndexes: file_service_radar_grpc_service_proto_depIdxs,
-		MessageInfos:      file_service_radar_grpc_service_proto_msgTypes,
+		GoTypes:           file_service_manage_grpc_service_proto_goTypes,
+		DependencyIndexes: file_service_manage_grpc_service_proto_depIdxs,
+		MessageInfos:      file_service_manage_grpc_service_proto_msgTypes,
 	}.Build()
-	File_service_radar_grpc_service_proto = out.File
-	file_service_radar_grpc_service_proto_rawDesc = nil
-	file_service_radar_grpc_service_proto_goTypes = nil
-	file_service_radar_grpc_service_proto_depIdxs = nil
+	File_service_manage_grpc_service_proto = out.File
+	file_service_manage_grpc_service_proto_rawDesc = nil
+	file_service_manage_grpc_service_proto_goTypes = nil
+	file_service_manage_grpc_service_proto_depIdxs = nil
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -308,74 +308,74 @@ var _ grpc.ClientConnInterface
 // is compatible with the grpc package it is being compiled against.
 const _ = grpc.SupportPackageIsVersion6
 
-// ServiceRadarGrpcServiceClient is the client API for ServiceRadarGrpcService service.
+// ServiceManageGrpcServiceClient is the client API for ServiceManageGrpcService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
-type ServiceRadarGrpcServiceClient interface {
+type ServiceManageGrpcServiceClient interface {
 	GetServices(ctx context.Context, in *ListServicesRequest, opts ...grpc.CallOption) (*ListServicesResponse, error)
 }
 
-type serviceRadarGrpcServiceClient struct {
+type serviceManageGrpcServiceClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewServiceRadarGrpcServiceClient(cc grpc.ClientConnInterface) ServiceRadarGrpcServiceClient {
-	return &serviceRadarGrpcServiceClient{cc}
+func NewServiceManageGrpcServiceClient(cc grpc.ClientConnInterface) ServiceManageGrpcServiceClient {
+	return &serviceManageGrpcServiceClient{cc}
 }
 
-func (c *serviceRadarGrpcServiceClient) GetServices(ctx context.Context, in *ListServicesRequest, opts ...grpc.CallOption) (*ListServicesResponse, error) {
+func (c *serviceManageGrpcServiceClient) GetServices(ctx context.Context, in *ListServicesRequest, opts ...grpc.CallOption) (*ListServicesResponse, error) {
 	out := new(ListServicesResponse)
-	err := c.cc.Invoke(ctx, "/ServiceRadarGrpcService/GetServices", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/ServiceManageGrpcService/GetServices", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// ServiceRadarGrpcServiceServer is the server API for ServiceRadarGrpcService service.
-type ServiceRadarGrpcServiceServer interface {
+// ServiceManageGrpcServiceServer is the server API for ServiceManageGrpcService service.
+type ServiceManageGrpcServiceServer interface {
 	GetServices(context.Context, *ListServicesRequest) (*ListServicesResponse, error)
 }
 
-// UnimplementedServiceRadarGrpcServiceServer can be embedded to have forward compatible implementations.
-type UnimplementedServiceRadarGrpcServiceServer struct {
+// UnimplementedServiceManageGrpcServiceServer can be embedded to have forward compatible implementations.
+type UnimplementedServiceManageGrpcServiceServer struct {
 }
 
-func (*UnimplementedServiceRadarGrpcServiceServer) GetServices(context.Context, *ListServicesRequest) (*ListServicesResponse, error) {
+func (*UnimplementedServiceManageGrpcServiceServer) GetServices(context.Context, *ListServicesRequest) (*ListServicesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetServices not implemented")
 }
 
-func RegisterServiceRadarGrpcServiceServer(s *grpc.Server, srv ServiceRadarGrpcServiceServer) {
-	s.RegisterService(&_ServiceRadarGrpcService_serviceDesc, srv)
+func RegisterServiceManageGrpcServiceServer(s *grpc.Server, srv ServiceManageGrpcServiceServer) {
+	s.RegisterService(&_ServiceManageGrpcService_serviceDesc, srv)
 }
 
-func _ServiceRadarGrpcService_GetServices_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _ServiceManageGrpcService_GetServices_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ListServicesRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ServiceRadarGrpcServiceServer).GetServices(ctx, in)
+		return srv.(ServiceManageGrpcServiceServer).GetServices(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/ServiceRadarGrpcService/GetServices",
+		FullMethod: "/ServiceManageGrpcService/GetServices",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ServiceRadarGrpcServiceServer).GetServices(ctx, req.(*ListServicesRequest))
+		return srv.(ServiceManageGrpcServiceServer).GetServices(ctx, req.(*ListServicesRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-var _ServiceRadarGrpcService_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "ServiceRadarGrpcService",
-	HandlerType: (*ServiceRadarGrpcServiceServer)(nil),
+var _ServiceManageGrpcService_serviceDesc = grpc.ServiceDesc{
+	ServiceName: "ServiceManageGrpcService",
+	HandlerType: (*ServiceManageGrpcServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "GetServices",
-			Handler:    _ServiceRadarGrpcService_GetServices_Handler,
+			Handler:    _ServiceManageGrpcService_GetServices_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "service_radar_grpc_service.proto",
+	Metadata: "service_manage_grpc_service.proto",
 }

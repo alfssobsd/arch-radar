@@ -6,20 +6,21 @@ import (
 	pb "github.com/alfssobsd/arch-radar/archradar-grpc"
 	"github.com/golang/protobuf/ptypes/empty"
 	"github.com/google/uuid"
+	"google.golang.org/grpc/codes"
+	"google.golang.org/grpc/status"
 	"log"
 )
 
-type dictionariesGrpcServiceServer struct {
+type dictionaryManageGrpcServiceServer struct {
 	dictionariesManageUseCase usecases.DictionariesManageUseCase
 }
 
-func NewDictionariesGrpcServiceServer(dictionariesManageUseCase usecases.DictionariesManageUseCase) *dictionariesGrpcServiceServer {
-	return &dictionariesGrpcServiceServer{dictionariesManageUseCase}
+func NewDictionaryManageGrpcServiceServer(dictionariesManageUseCase usecases.DictionariesManageUseCase) *dictionaryManageGrpcServiceServer {
+	return &dictionaryManageGrpcServiceServer{dictionariesManageUseCase}
 }
 
-func (s *dictionariesGrpcServiceServer) GetDictionaryList(ctx context.Context, req *pb.DictionaryListRequest) (*pb.DictionaryListResponse, error) {
+func (s *dictionaryManageGrpcServiceServer) GetDictionaryList(ctx context.Context, req *pb.DictionaryListRequest) (*pb.DictionaryListResponse, error) {
 	log.Println(req.DictType.String())
-
 	useCaseResult, _ := s.dictionariesManageUseCase.ShowAreaList()
 	grpcResponse := &pb.DictionaryListResponse{
 		Items: []*pb.DictionaryResponse{},
@@ -45,7 +46,13 @@ func (s *dictionariesGrpcServiceServer) GetDictionaryList(ctx context.Context, r
 }
 
 // Create Area Item
-func (s *dictionariesGrpcServiceServer) CreateDictionaryItem(ctx context.Context, req *pb.DictionaryCreateRequest) (*pb.DictionaryResponse, error) {
+func (s *dictionaryManageGrpcServiceServer) CreateDictionaryItem(ctx context.Context, req *pb.DictionaryCreateRequest) (*pb.DictionaryResponse, error) {
+	err := req.Validate()
+
+	if err != nil {
+		return nil, status.Error(codes.InvalidArgument, err.Error())
+	}
+
 	s.dictionariesManageUseCase.CreateArea(usecases.CreateAreaInDTO{
 		AreaUUID:    uuid.MustParse(req.DictionaryUuid),
 		Title:       req.Title,
@@ -62,11 +69,11 @@ func (s *dictionariesGrpcServiceServer) CreateDictionaryItem(ctx context.Context
 }
 
 // Delete Area Item
-func (s *dictionariesGrpcServiceServer) DeleteDictionaryItem(ctx context.Context, req *pb.DictionaryDeleteRequest) (*empty.Empty, error) {
+func (s *dictionaryManageGrpcServiceServer) DeleteDictionaryItem(ctx context.Context, req *pb.DictionaryDeleteRequest) (*empty.Empty, error) {
 	return nil, nil
 }
 
 // Update Area Item
-func (s *dictionariesGrpcServiceServer) UpdateDictionaryItem(ctx context.Context, req *pb.DictionaryUpdateRequest) (*pb.DictionaryResponse, error) {
+func (s *dictionaryManageGrpcServiceServer) UpdateDictionaryItem(ctx context.Context, req *pb.DictionaryUpdateRequest) (*pb.DictionaryResponse, error) {
 	return nil, nil
 }

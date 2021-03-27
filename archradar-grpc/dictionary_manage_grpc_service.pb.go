@@ -2,12 +2,13 @@
 // versions:
 // 	protoc-gen-go v1.25.0-devel
 // 	protoc        v3.13.0
-// source: dictionaries_grpc_service.proto
+// source: dictionary_manage_grpc_service.proto
 
 package archradar_grpc
 
 import (
 	context "context"
+	_ "github.com/envoyproxy/protoc-gen-validate/validate"
 	empty "github.com/golang/protobuf/ptypes/empty"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
@@ -58,11 +59,11 @@ func (x DictionaryType) String() string {
 }
 
 func (DictionaryType) Descriptor() protoreflect.EnumDescriptor {
-	return file_dictionaries_grpc_service_proto_enumTypes[0].Descriptor()
+	return file_dictionary_manage_grpc_service_proto_enumTypes[0].Descriptor()
 }
 
 func (DictionaryType) Type() protoreflect.EnumType {
-	return &file_dictionaries_grpc_service_proto_enumTypes[0]
+	return &file_dictionary_manage_grpc_service_proto_enumTypes[0]
 }
 
 func (x DictionaryType) Number() protoreflect.EnumNumber {
@@ -71,7 +72,7 @@ func (x DictionaryType) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use DictionaryType.Descriptor instead.
 func (DictionaryType) EnumDescriptor() ([]byte, []int) {
-	return file_dictionaries_grpc_service_proto_rawDescGZIP(), []int{0}
+	return file_dictionary_manage_grpc_service_proto_rawDescGZIP(), []int{0}
 }
 
 type DictionaryCreateRequest struct {
@@ -89,7 +90,7 @@ type DictionaryCreateRequest struct {
 func (x *DictionaryCreateRequest) Reset() {
 	*x = DictionaryCreateRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_dictionaries_grpc_service_proto_msgTypes[0]
+		mi := &file_dictionary_manage_grpc_service_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -102,7 +103,7 @@ func (x *DictionaryCreateRequest) String() string {
 func (*DictionaryCreateRequest) ProtoMessage() {}
 
 func (x *DictionaryCreateRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dictionaries_grpc_service_proto_msgTypes[0]
+	mi := &file_dictionary_manage_grpc_service_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -115,7 +116,7 @@ func (x *DictionaryCreateRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DictionaryCreateRequest.ProtoReflect.Descriptor instead.
 func (*DictionaryCreateRequest) Descriptor() ([]byte, []int) {
-	return file_dictionaries_grpc_service_proto_rawDescGZIP(), []int{0}
+	return file_dictionary_manage_grpc_service_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *DictionaryCreateRequest) GetDictionaryUuid() string {
@@ -168,7 +169,7 @@ type DictionaryUpdateRequest struct {
 func (x *DictionaryUpdateRequest) Reset() {
 	*x = DictionaryUpdateRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_dictionaries_grpc_service_proto_msgTypes[1]
+		mi := &file_dictionary_manage_grpc_service_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -181,7 +182,7 @@ func (x *DictionaryUpdateRequest) String() string {
 func (*DictionaryUpdateRequest) ProtoMessage() {}
 
 func (x *DictionaryUpdateRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dictionaries_grpc_service_proto_msgTypes[1]
+	mi := &file_dictionary_manage_grpc_service_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -194,7 +195,7 @@ func (x *DictionaryUpdateRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DictionaryUpdateRequest.ProtoReflect.Descriptor instead.
 func (*DictionaryUpdateRequest) Descriptor() ([]byte, []int) {
-	return file_dictionaries_grpc_service_proto_rawDescGZIP(), []int{1}
+	return file_dictionary_manage_grpc_service_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *DictionaryUpdateRequest) GetDictionaryUuid() string {
@@ -243,7 +244,7 @@ type DictionaryDeleteRequest struct {
 func (x *DictionaryDeleteRequest) Reset() {
 	*x = DictionaryDeleteRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_dictionaries_grpc_service_proto_msgTypes[2]
+		mi := &file_dictionary_manage_grpc_service_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -256,7 +257,7 @@ func (x *DictionaryDeleteRequest) String() string {
 func (*DictionaryDeleteRequest) ProtoMessage() {}
 
 func (x *DictionaryDeleteRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dictionaries_grpc_service_proto_msgTypes[2]
+	mi := &file_dictionary_manage_grpc_service_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -269,7 +270,7 @@ func (x *DictionaryDeleteRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DictionaryDeleteRequest.ProtoReflect.Descriptor instead.
 func (*DictionaryDeleteRequest) Descriptor() ([]byte, []int) {
-	return file_dictionaries_grpc_service_proto_rawDescGZIP(), []int{2}
+	return file_dictionary_manage_grpc_service_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *DictionaryDeleteRequest) GetDictionaryUuid() string {
@@ -290,7 +291,7 @@ type DictionaryListRequest struct {
 func (x *DictionaryListRequest) Reset() {
 	*x = DictionaryListRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_dictionaries_grpc_service_proto_msgTypes[3]
+		mi := &file_dictionary_manage_grpc_service_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -303,7 +304,7 @@ func (x *DictionaryListRequest) String() string {
 func (*DictionaryListRequest) ProtoMessage() {}
 
 func (x *DictionaryListRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dictionaries_grpc_service_proto_msgTypes[3]
+	mi := &file_dictionary_manage_grpc_service_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -316,7 +317,7 @@ func (x *DictionaryListRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DictionaryListRequest.ProtoReflect.Descriptor instead.
 func (*DictionaryListRequest) Descriptor() ([]byte, []int) {
-	return file_dictionaries_grpc_service_proto_rawDescGZIP(), []int{3}
+	return file_dictionary_manage_grpc_service_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *DictionaryListRequest) GetDictType() DictionaryType {
@@ -341,7 +342,7 @@ type DictionaryResponse struct {
 func (x *DictionaryResponse) Reset() {
 	*x = DictionaryResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_dictionaries_grpc_service_proto_msgTypes[4]
+		mi := &file_dictionary_manage_grpc_service_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -354,7 +355,7 @@ func (x *DictionaryResponse) String() string {
 func (*DictionaryResponse) ProtoMessage() {}
 
 func (x *DictionaryResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dictionaries_grpc_service_proto_msgTypes[4]
+	mi := &file_dictionary_manage_grpc_service_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -367,7 +368,7 @@ func (x *DictionaryResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DictionaryResponse.ProtoReflect.Descriptor instead.
 func (*DictionaryResponse) Descriptor() ([]byte, []int) {
-	return file_dictionaries_grpc_service_proto_rawDescGZIP(), []int{4}
+	return file_dictionary_manage_grpc_service_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *DictionaryResponse) GetDictionaryUuid() string {
@@ -417,7 +418,7 @@ type DictionaryListResponse struct {
 func (x *DictionaryListResponse) Reset() {
 	*x = DictionaryListResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_dictionaries_grpc_service_proto_msgTypes[5]
+		mi := &file_dictionary_manage_grpc_service_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -430,7 +431,7 @@ func (x *DictionaryListResponse) String() string {
 func (*DictionaryListResponse) ProtoMessage() {}
 
 func (x *DictionaryListResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dictionaries_grpc_service_proto_msgTypes[5]
+	mi := &file_dictionary_manage_grpc_service_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -443,7 +444,7 @@ func (x *DictionaryListResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DictionaryListResponse.ProtoReflect.Descriptor instead.
 func (*DictionaryListResponse) Descriptor() ([]byte, []int) {
-	return file_dictionaries_grpc_service_proto_rawDescGZIP(), []int{5}
+	return file_dictionary_manage_grpc_service_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *DictionaryListResponse) GetItems() []*DictionaryResponse {
@@ -460,73 +461,79 @@ func (x *DictionaryListResponse) GetPageInfo() *PageInfoItem {
 	return nil
 }
 
-var File_dictionaries_grpc_service_proto protoreflect.FileDescriptor
+var File_dictionary_manage_grpc_service_proto protoreflect.FileDescriptor
 
-var file_dictionaries_grpc_service_proto_rawDesc = []byte{
-	0x0a, 0x1f, 0x64, 0x69, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x61, 0x72, 0x69, 0x65, 0x73, 0x5f, 0x67,
-	0x72, 0x70, 0x63, 0x5f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74,
-	0x6f, 0x1a, 0x12, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2e,
-	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x14, 0x6f, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x61, 0x6c, 0x5f,
-	0x74, 0x79, 0x70, 0x65, 0x73, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x1b, 0x67, 0x6f, 0x6f,
-	0x67, 0x6c, 0x65, 0x2f, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2f, 0x65, 0x6d, 0x70,
-	0x74, 0x79, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0xbe, 0x01, 0x0a, 0x17, 0x44, 0x69, 0x63,
-	0x74, 0x69, 0x6f, 0x6e, 0x61, 0x72, 0x79, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x52, 0x65, 0x71,
-	0x75, 0x65, 0x73, 0x74, 0x12, 0x27, 0x0a, 0x0f, 0x64, 0x69, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x61,
-	0x72, 0x79, 0x5f, 0x75, 0x75, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0e, 0x64,
-	0x69, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x61, 0x72, 0x79, 0x55, 0x75, 0x69, 0x64, 0x12, 0x2c, 0x0a,
-	0x09, 0x64, 0x69, 0x63, 0x74, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0e,
-	0x32, 0x0f, 0x2e, 0x44, 0x69, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x61, 0x72, 0x79, 0x54, 0x79, 0x70,
-	0x65, 0x52, 0x08, 0x64, 0x69, 0x63, 0x74, 0x54, 0x79, 0x70, 0x65, 0x12, 0x14, 0x0a, 0x05, 0x74,
-	0x69, 0x74, 0x6c, 0x65, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x74, 0x69, 0x74, 0x6c,
-	0x65, 0x12, 0x14, 0x0a, 0x05, 0x63, 0x6f, 0x6c, 0x6f, 0x72, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09,
-	0x52, 0x05, 0x63, 0x6f, 0x6c, 0x6f, 0x72, 0x12, 0x20, 0x0a, 0x0b, 0x64, 0x65, 0x73, 0x63, 0x72,
-	0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x05, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x64, 0x65,
-	0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x22, 0xbe, 0x01, 0x0a, 0x17, 0x44, 0x69,
-	0x63, 0x74, 0x69, 0x6f, 0x6e, 0x61, 0x72, 0x79, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x52, 0x65,
-	0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x27, 0x0a, 0x0f, 0x64, 0x69, 0x63, 0x74, 0x69, 0x6f, 0x6e,
-	0x61, 0x72, 0x79, 0x5f, 0x75, 0x75, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0e,
-	0x64, 0x69, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x61, 0x72, 0x79, 0x55, 0x75, 0x69, 0x64, 0x12, 0x2c,
-	0x0a, 0x09, 0x64, 0x69, 0x63, 0x74, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28,
-	0x0e, 0x32, 0x0f, 0x2e, 0x44, 0x69, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x61, 0x72, 0x79, 0x54, 0x79,
-	0x70, 0x65, 0x52, 0x08, 0x64, 0x69, 0x63, 0x74, 0x54, 0x79, 0x70, 0x65, 0x12, 0x14, 0x0a, 0x05,
-	0x74, 0x69, 0x74, 0x6c, 0x65, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x74, 0x69, 0x74,
-	0x6c, 0x65, 0x12, 0x14, 0x0a, 0x05, 0x63, 0x6f, 0x6c, 0x6f, 0x72, 0x18, 0x04, 0x20, 0x01, 0x28,
-	0x09, 0x52, 0x05, 0x63, 0x6f, 0x6c, 0x6f, 0x72, 0x12, 0x20, 0x0a, 0x0b, 0x64, 0x65, 0x73, 0x63,
-	0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x05, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x64,
-	0x65, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x22, 0x42, 0x0a, 0x17, 0x44, 0x69,
-	0x63, 0x74, 0x69, 0x6f, 0x6e, 0x61, 0x72, 0x79, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x52, 0x65,
-	0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x27, 0x0a, 0x0f, 0x64, 0x69, 0x63, 0x74, 0x69, 0x6f, 0x6e,
-	0x61, 0x72, 0x79, 0x5f, 0x75, 0x75, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0e,
-	0x64, 0x69, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x61, 0x72, 0x79, 0x55, 0x75, 0x69, 0x64, 0x22, 0x45,
-	0x0a, 0x15, 0x44, 0x69, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x61, 0x72, 0x79, 0x4c, 0x69, 0x73, 0x74,
-	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x2c, 0x0a, 0x09, 0x64, 0x69, 0x63, 0x74, 0x5f,
-	0x74, 0x79, 0x70, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x0f, 0x2e, 0x44, 0x69, 0x63,
-	0x74, 0x69, 0x6f, 0x6e, 0x61, 0x72, 0x79, 0x54, 0x79, 0x70, 0x65, 0x52, 0x08, 0x64, 0x69, 0x63,
-	0x74, 0x54, 0x79, 0x70, 0x65, 0x22, 0xb9, 0x01, 0x0a, 0x12, 0x44, 0x69, 0x63, 0x74, 0x69, 0x6f,
-	0x6e, 0x61, 0x72, 0x79, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x27, 0x0a, 0x0f,
-	0x64, 0x69, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x61, 0x72, 0x79, 0x5f, 0x75, 0x75, 0x69, 0x64, 0x18,
-	0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0e, 0x64, 0x69, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x61, 0x72,
+var file_dictionary_manage_grpc_service_proto_rawDesc = []byte{
+	0x0a, 0x24, 0x64, 0x69, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x61, 0x72, 0x79, 0x5f, 0x6d, 0x61, 0x6e,
+	0x61, 0x67, 0x65, 0x5f, 0x67, 0x72, 0x70, 0x63, 0x5f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65,
+	0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x12, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x5f, 0x74,
+	0x79, 0x70, 0x65, 0x73, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x14, 0x6f, 0x70, 0x74, 0x69,
+	0x6f, 0x6e, 0x61, 0x6c, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x73, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f,
+	0x1a, 0x1b, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75,
+	0x66, 0x2f, 0x65, 0x6d, 0x70, 0x74, 0x79, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x17, 0x76,
+	0x61, 0x6c, 0x69, 0x64, 0x61, 0x74, 0x65, 0x2f, 0x76, 0x61, 0x6c, 0x69, 0x64, 0x61, 0x74, 0x65,
+	0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0xde, 0x01, 0x0a, 0x17, 0x44, 0x69, 0x63, 0x74, 0x69,
+	0x6f, 0x6e, 0x61, 0x72, 0x79, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65,
+	0x73, 0x74, 0x12, 0x31, 0x0a, 0x0f, 0x64, 0x69, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x61, 0x72, 0x79,
+	0x5f, 0x75, 0x75, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x08, 0xfa, 0x42, 0x05,
+	0x72, 0x03, 0xb0, 0x01, 0x01, 0x52, 0x0e, 0x64, 0x69, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x61, 0x72,
 	0x79, 0x55, 0x75, 0x69, 0x64, 0x12, 0x2c, 0x0a, 0x09, 0x64, 0x69, 0x63, 0x74, 0x5f, 0x74, 0x79,
 	0x70, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x0f, 0x2e, 0x44, 0x69, 0x63, 0x74, 0x69,
 	0x6f, 0x6e, 0x61, 0x72, 0x79, 0x54, 0x79, 0x70, 0x65, 0x52, 0x08, 0x64, 0x69, 0x63, 0x74, 0x54,
-	0x79, 0x70, 0x65, 0x12, 0x14, 0x0a, 0x05, 0x74, 0x69, 0x74, 0x6c, 0x65, 0x18, 0x03, 0x20, 0x01,
-	0x28, 0x09, 0x52, 0x05, 0x74, 0x69, 0x74, 0x6c, 0x65, 0x12, 0x14, 0x0a, 0x05, 0x63, 0x6f, 0x6c,
-	0x6f, 0x72, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x63, 0x6f, 0x6c, 0x6f, 0x72, 0x12,
-	0x20, 0x0a, 0x0b, 0x64, 0x65, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x05,
-	0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x64, 0x65, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f,
-	0x6e, 0x22, 0x7b, 0x0a, 0x16, 0x44, 0x69, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x61, 0x72, 0x79, 0x4c,
-	0x69, 0x73, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x29, 0x0a, 0x05, 0x69,
-	0x74, 0x65, 0x6d, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x13, 0x2e, 0x44, 0x69, 0x63,
-	0x74, 0x69, 0x6f, 0x6e, 0x61, 0x72, 0x79, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x52,
-	0x05, 0x69, 0x74, 0x65, 0x6d, 0x73, 0x12, 0x36, 0x0a, 0x09, 0x70, 0x61, 0x67, 0x65, 0x5f, 0x69,
-	0x6e, 0x66, 0x6f, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x19, 0x2e, 0x43, 0x6f, 0x6d, 0x6d,
-	0x6f, 0x6e, 0x54, 0x79, 0x70, 0x65, 0x73, 0x2e, 0x50, 0x61, 0x67, 0x65, 0x49, 0x6e, 0x66, 0x6f,
-	0x49, 0x74, 0x65, 0x6d, 0x52, 0x08, 0x70, 0x61, 0x67, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x2a, 0x33,
-	0x0a, 0x0e, 0x44, 0x69, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x61, 0x72, 0x79, 0x54, 0x79, 0x70, 0x65,
-	0x12, 0x08, 0x0a, 0x04, 0x41, 0x52, 0x45, 0x41, 0x10, 0x00, 0x12, 0x08, 0x0a, 0x04, 0x54, 0x45,
-	0x41, 0x4d, 0x10, 0x01, 0x12, 0x0d, 0x0a, 0x09, 0x43, 0x4f, 0x44, 0x45, 0x5f, 0x4c, 0x41, 0x4e,
-	0x47, 0x10, 0x02, 0x32, 0xbf, 0x02, 0x0a, 0x17, 0x44, 0x69, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x61,
-	0x72, 0x69, 0x65, 0x73, 0x47, 0x72, 0x70, 0x63, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12,
+	0x79, 0x70, 0x65, 0x12, 0x20, 0x0a, 0x05, 0x74, 0x69, 0x74, 0x6c, 0x65, 0x18, 0x03, 0x20, 0x01,
+	0x28, 0x09, 0x42, 0x0a, 0xfa, 0x42, 0x07, 0x72, 0x05, 0x10, 0x04, 0x18, 0x80, 0x01, 0x52, 0x05,
+	0x74, 0x69, 0x74, 0x6c, 0x65, 0x12, 0x1e, 0x0a, 0x05, 0x63, 0x6f, 0x6c, 0x6f, 0x72, 0x18, 0x04,
+	0x20, 0x01, 0x28, 0x09, 0x42, 0x08, 0xfa, 0x42, 0x05, 0x72, 0x03, 0x98, 0x01, 0x07, 0x52, 0x05,
+	0x63, 0x6f, 0x6c, 0x6f, 0x72, 0x12, 0x20, 0x0a, 0x0b, 0x64, 0x65, 0x73, 0x63, 0x72, 0x69, 0x70,
+	0x74, 0x69, 0x6f, 0x6e, 0x18, 0x05, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x64, 0x65, 0x73, 0x63,
+	0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x22, 0xc8, 0x01, 0x0a, 0x17, 0x44, 0x69, 0x63, 0x74,
+	0x69, 0x6f, 0x6e, 0x61, 0x72, 0x79, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x52, 0x65, 0x71, 0x75,
+	0x65, 0x73, 0x74, 0x12, 0x31, 0x0a, 0x0f, 0x64, 0x69, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x61, 0x72,
+	0x79, 0x5f, 0x75, 0x75, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x08, 0xfa, 0x42,
+	0x05, 0x72, 0x03, 0xb0, 0x01, 0x01, 0x52, 0x0e, 0x64, 0x69, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x61,
+	0x72, 0x79, 0x55, 0x75, 0x69, 0x64, 0x12, 0x2c, 0x0a, 0x09, 0x64, 0x69, 0x63, 0x74, 0x5f, 0x74,
+	0x79, 0x70, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x0f, 0x2e, 0x44, 0x69, 0x63, 0x74,
+	0x69, 0x6f, 0x6e, 0x61, 0x72, 0x79, 0x54, 0x79, 0x70, 0x65, 0x52, 0x08, 0x64, 0x69, 0x63, 0x74,
+	0x54, 0x79, 0x70, 0x65, 0x12, 0x14, 0x0a, 0x05, 0x74, 0x69, 0x74, 0x6c, 0x65, 0x18, 0x03, 0x20,
+	0x01, 0x28, 0x09, 0x52, 0x05, 0x74, 0x69, 0x74, 0x6c, 0x65, 0x12, 0x14, 0x0a, 0x05, 0x63, 0x6f,
+	0x6c, 0x6f, 0x72, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x63, 0x6f, 0x6c, 0x6f, 0x72,
+	0x12, 0x20, 0x0a, 0x0b, 0x64, 0x65, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x18,
+	0x05, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x64, 0x65, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69,
+	0x6f, 0x6e, 0x22, 0x4c, 0x0a, 0x17, 0x44, 0x69, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x61, 0x72, 0x79,
+	0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x31, 0x0a,
+	0x0f, 0x64, 0x69, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x61, 0x72, 0x79, 0x5f, 0x75, 0x75, 0x69, 0x64,
+	0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x08, 0xfa, 0x42, 0x05, 0x72, 0x03, 0xb0, 0x01, 0x01,
+	0x52, 0x0e, 0x64, 0x69, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x61, 0x72, 0x79, 0x55, 0x75, 0x69, 0x64,
+	0x22, 0x45, 0x0a, 0x15, 0x44, 0x69, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x61, 0x72, 0x79, 0x4c, 0x69,
+	0x73, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x2c, 0x0a, 0x09, 0x64, 0x69, 0x63,
+	0x74, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x0f, 0x2e, 0x44,
+	0x69, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x61, 0x72, 0x79, 0x54, 0x79, 0x70, 0x65, 0x52, 0x08, 0x64,
+	0x69, 0x63, 0x74, 0x54, 0x79, 0x70, 0x65, 0x22, 0xc3, 0x01, 0x0a, 0x12, 0x44, 0x69, 0x63, 0x74,
+	0x69, 0x6f, 0x6e, 0x61, 0x72, 0x79, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x31,
+	0x0a, 0x0f, 0x64, 0x69, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x61, 0x72, 0x79, 0x5f, 0x75, 0x75, 0x69,
+	0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x42, 0x08, 0xfa, 0x42, 0x05, 0x72, 0x03, 0xb0, 0x01,
+	0x01, 0x52, 0x0e, 0x64, 0x69, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x61, 0x72, 0x79, 0x55, 0x75, 0x69,
+	0x64, 0x12, 0x2c, 0x0a, 0x09, 0x64, 0x69, 0x63, 0x74, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x18, 0x02,
+	0x20, 0x01, 0x28, 0x0e, 0x32, 0x0f, 0x2e, 0x44, 0x69, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x61, 0x72,
+	0x79, 0x54, 0x79, 0x70, 0x65, 0x52, 0x08, 0x64, 0x69, 0x63, 0x74, 0x54, 0x79, 0x70, 0x65, 0x12,
+	0x14, 0x0a, 0x05, 0x74, 0x69, 0x74, 0x6c, 0x65, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05,
+	0x74, 0x69, 0x74, 0x6c, 0x65, 0x12, 0x14, 0x0a, 0x05, 0x63, 0x6f, 0x6c, 0x6f, 0x72, 0x18, 0x04,
+	0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x63, 0x6f, 0x6c, 0x6f, 0x72, 0x12, 0x20, 0x0a, 0x0b, 0x64,
+	0x65, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x05, 0x20, 0x01, 0x28, 0x09,
+	0x52, 0x0b, 0x64, 0x65, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x22, 0x7b, 0x0a,
+	0x16, 0x44, 0x69, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x61, 0x72, 0x79, 0x4c, 0x69, 0x73, 0x74, 0x52,
+	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x29, 0x0a, 0x05, 0x69, 0x74, 0x65, 0x6d, 0x73,
+	0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x13, 0x2e, 0x44, 0x69, 0x63, 0x74, 0x69, 0x6f, 0x6e,
+	0x61, 0x72, 0x79, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x52, 0x05, 0x69, 0x74, 0x65,
+	0x6d, 0x73, 0x12, 0x36, 0x0a, 0x09, 0x70, 0x61, 0x67, 0x65, 0x5f, 0x69, 0x6e, 0x66, 0x6f, 0x18,
+	0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x19, 0x2e, 0x43, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x54, 0x79,
+	0x70, 0x65, 0x73, 0x2e, 0x50, 0x61, 0x67, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x49, 0x74, 0x65, 0x6d,
+	0x52, 0x08, 0x70, 0x61, 0x67, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x2a, 0x33, 0x0a, 0x0e, 0x44, 0x69,
+	0x63, 0x74, 0x69, 0x6f, 0x6e, 0x61, 0x72, 0x79, 0x54, 0x79, 0x70, 0x65, 0x12, 0x08, 0x0a, 0x04,
+	0x41, 0x52, 0x45, 0x41, 0x10, 0x00, 0x12, 0x08, 0x0a, 0x04, 0x54, 0x45, 0x41, 0x4d, 0x10, 0x01,
+	0x12, 0x0d, 0x0a, 0x09, 0x43, 0x4f, 0x44, 0x45, 0x5f, 0x4c, 0x41, 0x4e, 0x47, 0x10, 0x02, 0x32,
+	0xc3, 0x02, 0x0a, 0x1b, 0x44, 0x69, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x61, 0x72, 0x79, 0x4d, 0x61,
+	0x6e, 0x61, 0x67, 0x65, 0x47, 0x72, 0x70, 0x63, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12,
 	0x46, 0x0a, 0x11, 0x47, 0x65, 0x74, 0x44, 0x69, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x61, 0x72, 0x79,
 	0x4c, 0x69, 0x73, 0x74, 0x12, 0x16, 0x2e, 0x44, 0x69, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x61, 0x72,
 	0x79, 0x4c, 0x69, 0x73, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x17, 0x2e, 0x44,
@@ -552,20 +559,20 @@ var file_dictionaries_grpc_service_proto_rawDesc = []byte{
 }
 
 var (
-	file_dictionaries_grpc_service_proto_rawDescOnce sync.Once
-	file_dictionaries_grpc_service_proto_rawDescData = file_dictionaries_grpc_service_proto_rawDesc
+	file_dictionary_manage_grpc_service_proto_rawDescOnce sync.Once
+	file_dictionary_manage_grpc_service_proto_rawDescData = file_dictionary_manage_grpc_service_proto_rawDesc
 )
 
-func file_dictionaries_grpc_service_proto_rawDescGZIP() []byte {
-	file_dictionaries_grpc_service_proto_rawDescOnce.Do(func() {
-		file_dictionaries_grpc_service_proto_rawDescData = protoimpl.X.CompressGZIP(file_dictionaries_grpc_service_proto_rawDescData)
+func file_dictionary_manage_grpc_service_proto_rawDescGZIP() []byte {
+	file_dictionary_manage_grpc_service_proto_rawDescOnce.Do(func() {
+		file_dictionary_manage_grpc_service_proto_rawDescData = protoimpl.X.CompressGZIP(file_dictionary_manage_grpc_service_proto_rawDescData)
 	})
-	return file_dictionaries_grpc_service_proto_rawDescData
+	return file_dictionary_manage_grpc_service_proto_rawDescData
 }
 
-var file_dictionaries_grpc_service_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_dictionaries_grpc_service_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
-var file_dictionaries_grpc_service_proto_goTypes = []interface{}{
+var file_dictionary_manage_grpc_service_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
+var file_dictionary_manage_grpc_service_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
+var file_dictionary_manage_grpc_service_proto_goTypes = []interface{}{
 	(DictionaryType)(0),             // 0: DictionaryType
 	(*DictionaryCreateRequest)(nil), // 1: DictionaryCreateRequest
 	(*DictionaryUpdateRequest)(nil), // 2: DictionaryUpdateRequest
@@ -576,21 +583,21 @@ var file_dictionaries_grpc_service_proto_goTypes = []interface{}{
 	(*PageInfoItem)(nil),            // 7: CommonTypes.PageInfoItem
 	(*empty.Empty)(nil),             // 8: google.protobuf.Empty
 }
-var file_dictionaries_grpc_service_proto_depIdxs = []int32{
+var file_dictionary_manage_grpc_service_proto_depIdxs = []int32{
 	0,  // 0: DictionaryCreateRequest.dict_type:type_name -> DictionaryType
 	0,  // 1: DictionaryUpdateRequest.dict_type:type_name -> DictionaryType
 	0,  // 2: DictionaryListRequest.dict_type:type_name -> DictionaryType
 	0,  // 3: DictionaryResponse.dict_type:type_name -> DictionaryType
 	5,  // 4: DictionaryListResponse.items:type_name -> DictionaryResponse
 	7,  // 5: DictionaryListResponse.page_info:type_name -> CommonTypes.PageInfoItem
-	4,  // 6: DictionariesGrpcService.GetDictionaryList:input_type -> DictionaryListRequest
-	1,  // 7: DictionariesGrpcService.CreateDictionaryItem:input_type -> DictionaryCreateRequest
-	3,  // 8: DictionariesGrpcService.DeleteDictionaryItem:input_type -> DictionaryDeleteRequest
-	2,  // 9: DictionariesGrpcService.UpdateDictionaryItem:input_type -> DictionaryUpdateRequest
-	6,  // 10: DictionariesGrpcService.GetDictionaryList:output_type -> DictionaryListResponse
-	5,  // 11: DictionariesGrpcService.CreateDictionaryItem:output_type -> DictionaryResponse
-	8,  // 12: DictionariesGrpcService.DeleteDictionaryItem:output_type -> google.protobuf.Empty
-	5,  // 13: DictionariesGrpcService.UpdateDictionaryItem:output_type -> DictionaryResponse
+	4,  // 6: DictionaryManageGrpcService.GetDictionaryList:input_type -> DictionaryListRequest
+	1,  // 7: DictionaryManageGrpcService.CreateDictionaryItem:input_type -> DictionaryCreateRequest
+	3,  // 8: DictionaryManageGrpcService.DeleteDictionaryItem:input_type -> DictionaryDeleteRequest
+	2,  // 9: DictionaryManageGrpcService.UpdateDictionaryItem:input_type -> DictionaryUpdateRequest
+	6,  // 10: DictionaryManageGrpcService.GetDictionaryList:output_type -> DictionaryListResponse
+	5,  // 11: DictionaryManageGrpcService.CreateDictionaryItem:output_type -> DictionaryResponse
+	8,  // 12: DictionaryManageGrpcService.DeleteDictionaryItem:output_type -> google.protobuf.Empty
+	5,  // 13: DictionaryManageGrpcService.UpdateDictionaryItem:output_type -> DictionaryResponse
 	10, // [10:14] is the sub-list for method output_type
 	6,  // [6:10] is the sub-list for method input_type
 	6,  // [6:6] is the sub-list for extension type_name
@@ -598,15 +605,15 @@ var file_dictionaries_grpc_service_proto_depIdxs = []int32{
 	0,  // [0:6] is the sub-list for field type_name
 }
 
-func init() { file_dictionaries_grpc_service_proto_init() }
-func file_dictionaries_grpc_service_proto_init() {
-	if File_dictionaries_grpc_service_proto != nil {
+func init() { file_dictionary_manage_grpc_service_proto_init() }
+func file_dictionary_manage_grpc_service_proto_init() {
+	if File_dictionary_manage_grpc_service_proto != nil {
 		return
 	}
 	file_common_types_proto_init()
 	file_optional_types_proto_init()
 	if !protoimpl.UnsafeEnabled {
-		file_dictionaries_grpc_service_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_dictionary_manage_grpc_service_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DictionaryCreateRequest); i {
 			case 0:
 				return &v.state
@@ -618,7 +625,7 @@ func file_dictionaries_grpc_service_proto_init() {
 				return nil
 			}
 		}
-		file_dictionaries_grpc_service_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_dictionary_manage_grpc_service_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DictionaryUpdateRequest); i {
 			case 0:
 				return &v.state
@@ -630,7 +637,7 @@ func file_dictionaries_grpc_service_proto_init() {
 				return nil
 			}
 		}
-		file_dictionaries_grpc_service_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_dictionary_manage_grpc_service_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DictionaryDeleteRequest); i {
 			case 0:
 				return &v.state
@@ -642,7 +649,7 @@ func file_dictionaries_grpc_service_proto_init() {
 				return nil
 			}
 		}
-		file_dictionaries_grpc_service_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_dictionary_manage_grpc_service_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DictionaryListRequest); i {
 			case 0:
 				return &v.state
@@ -654,7 +661,7 @@ func file_dictionaries_grpc_service_proto_init() {
 				return nil
 			}
 		}
-		file_dictionaries_grpc_service_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_dictionary_manage_grpc_service_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DictionaryResponse); i {
 			case 0:
 				return &v.state
@@ -666,7 +673,7 @@ func file_dictionaries_grpc_service_proto_init() {
 				return nil
 			}
 		}
-		file_dictionaries_grpc_service_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_dictionary_manage_grpc_service_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DictionaryListResponse); i {
 			case 0:
 				return &v.state
@@ -683,21 +690,21 @@ func file_dictionaries_grpc_service_proto_init() {
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_dictionaries_grpc_service_proto_rawDesc,
+			RawDescriptor: file_dictionary_manage_grpc_service_proto_rawDesc,
 			NumEnums:      1,
 			NumMessages:   6,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_dictionaries_grpc_service_proto_goTypes,
-		DependencyIndexes: file_dictionaries_grpc_service_proto_depIdxs,
-		EnumInfos:         file_dictionaries_grpc_service_proto_enumTypes,
-		MessageInfos:      file_dictionaries_grpc_service_proto_msgTypes,
+		GoTypes:           file_dictionary_manage_grpc_service_proto_goTypes,
+		DependencyIndexes: file_dictionary_manage_grpc_service_proto_depIdxs,
+		EnumInfos:         file_dictionary_manage_grpc_service_proto_enumTypes,
+		MessageInfos:      file_dictionary_manage_grpc_service_proto_msgTypes,
 	}.Build()
-	File_dictionaries_grpc_service_proto = out.File
-	file_dictionaries_grpc_service_proto_rawDesc = nil
-	file_dictionaries_grpc_service_proto_goTypes = nil
-	file_dictionaries_grpc_service_proto_depIdxs = nil
+	File_dictionary_manage_grpc_service_proto = out.File
+	file_dictionary_manage_grpc_service_proto_rawDesc = nil
+	file_dictionary_manage_grpc_service_proto_goTypes = nil
+	file_dictionary_manage_grpc_service_proto_depIdxs = nil
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -708,182 +715,182 @@ var _ grpc.ClientConnInterface
 // is compatible with the grpc package it is being compiled against.
 const _ = grpc.SupportPackageIsVersion6
 
-// DictionariesGrpcServiceClient is the client API for DictionariesGrpcService service.
+// DictionaryManageGrpcServiceClient is the client API for DictionaryManageGrpcService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
-type DictionariesGrpcServiceClient interface {
+type DictionaryManageGrpcServiceClient interface {
 	GetDictionaryList(ctx context.Context, in *DictionaryListRequest, opts ...grpc.CallOption) (*DictionaryListResponse, error)
 	CreateDictionaryItem(ctx context.Context, in *DictionaryCreateRequest, opts ...grpc.CallOption) (*DictionaryResponse, error)
 	DeleteDictionaryItem(ctx context.Context, in *DictionaryDeleteRequest, opts ...grpc.CallOption) (*empty.Empty, error)
 	UpdateDictionaryItem(ctx context.Context, in *DictionaryUpdateRequest, opts ...grpc.CallOption) (*DictionaryResponse, error)
 }
 
-type dictionariesGrpcServiceClient struct {
+type dictionaryManageGrpcServiceClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewDictionariesGrpcServiceClient(cc grpc.ClientConnInterface) DictionariesGrpcServiceClient {
-	return &dictionariesGrpcServiceClient{cc}
+func NewDictionaryManageGrpcServiceClient(cc grpc.ClientConnInterface) DictionaryManageGrpcServiceClient {
+	return &dictionaryManageGrpcServiceClient{cc}
 }
 
-func (c *dictionariesGrpcServiceClient) GetDictionaryList(ctx context.Context, in *DictionaryListRequest, opts ...grpc.CallOption) (*DictionaryListResponse, error) {
+func (c *dictionaryManageGrpcServiceClient) GetDictionaryList(ctx context.Context, in *DictionaryListRequest, opts ...grpc.CallOption) (*DictionaryListResponse, error) {
 	out := new(DictionaryListResponse)
-	err := c.cc.Invoke(ctx, "/DictionariesGrpcService/GetDictionaryList", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/DictionaryManageGrpcService/GetDictionaryList", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *dictionariesGrpcServiceClient) CreateDictionaryItem(ctx context.Context, in *DictionaryCreateRequest, opts ...grpc.CallOption) (*DictionaryResponse, error) {
+func (c *dictionaryManageGrpcServiceClient) CreateDictionaryItem(ctx context.Context, in *DictionaryCreateRequest, opts ...grpc.CallOption) (*DictionaryResponse, error) {
 	out := new(DictionaryResponse)
-	err := c.cc.Invoke(ctx, "/DictionariesGrpcService/CreateDictionaryItem", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/DictionaryManageGrpcService/CreateDictionaryItem", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *dictionariesGrpcServiceClient) DeleteDictionaryItem(ctx context.Context, in *DictionaryDeleteRequest, opts ...grpc.CallOption) (*empty.Empty, error) {
+func (c *dictionaryManageGrpcServiceClient) DeleteDictionaryItem(ctx context.Context, in *DictionaryDeleteRequest, opts ...grpc.CallOption) (*empty.Empty, error) {
 	out := new(empty.Empty)
-	err := c.cc.Invoke(ctx, "/DictionariesGrpcService/DeleteDictionaryItem", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/DictionaryManageGrpcService/DeleteDictionaryItem", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *dictionariesGrpcServiceClient) UpdateDictionaryItem(ctx context.Context, in *DictionaryUpdateRequest, opts ...grpc.CallOption) (*DictionaryResponse, error) {
+func (c *dictionaryManageGrpcServiceClient) UpdateDictionaryItem(ctx context.Context, in *DictionaryUpdateRequest, opts ...grpc.CallOption) (*DictionaryResponse, error) {
 	out := new(DictionaryResponse)
-	err := c.cc.Invoke(ctx, "/DictionariesGrpcService/UpdateDictionaryItem", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/DictionaryManageGrpcService/UpdateDictionaryItem", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// DictionariesGrpcServiceServer is the server API for DictionariesGrpcService service.
-type DictionariesGrpcServiceServer interface {
+// DictionaryManageGrpcServiceServer is the server API for DictionaryManageGrpcService service.
+type DictionaryManageGrpcServiceServer interface {
 	GetDictionaryList(context.Context, *DictionaryListRequest) (*DictionaryListResponse, error)
 	CreateDictionaryItem(context.Context, *DictionaryCreateRequest) (*DictionaryResponse, error)
 	DeleteDictionaryItem(context.Context, *DictionaryDeleteRequest) (*empty.Empty, error)
 	UpdateDictionaryItem(context.Context, *DictionaryUpdateRequest) (*DictionaryResponse, error)
 }
 
-// UnimplementedDictionariesGrpcServiceServer can be embedded to have forward compatible implementations.
-type UnimplementedDictionariesGrpcServiceServer struct {
+// UnimplementedDictionaryManageGrpcServiceServer can be embedded to have forward compatible implementations.
+type UnimplementedDictionaryManageGrpcServiceServer struct {
 }
 
-func (*UnimplementedDictionariesGrpcServiceServer) GetDictionaryList(context.Context, *DictionaryListRequest) (*DictionaryListResponse, error) {
+func (*UnimplementedDictionaryManageGrpcServiceServer) GetDictionaryList(context.Context, *DictionaryListRequest) (*DictionaryListResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetDictionaryList not implemented")
 }
-func (*UnimplementedDictionariesGrpcServiceServer) CreateDictionaryItem(context.Context, *DictionaryCreateRequest) (*DictionaryResponse, error) {
+func (*UnimplementedDictionaryManageGrpcServiceServer) CreateDictionaryItem(context.Context, *DictionaryCreateRequest) (*DictionaryResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateDictionaryItem not implemented")
 }
-func (*UnimplementedDictionariesGrpcServiceServer) DeleteDictionaryItem(context.Context, *DictionaryDeleteRequest) (*empty.Empty, error) {
+func (*UnimplementedDictionaryManageGrpcServiceServer) DeleteDictionaryItem(context.Context, *DictionaryDeleteRequest) (*empty.Empty, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteDictionaryItem not implemented")
 }
-func (*UnimplementedDictionariesGrpcServiceServer) UpdateDictionaryItem(context.Context, *DictionaryUpdateRequest) (*DictionaryResponse, error) {
+func (*UnimplementedDictionaryManageGrpcServiceServer) UpdateDictionaryItem(context.Context, *DictionaryUpdateRequest) (*DictionaryResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateDictionaryItem not implemented")
 }
 
-func RegisterDictionariesGrpcServiceServer(s *grpc.Server, srv DictionariesGrpcServiceServer) {
-	s.RegisterService(&_DictionariesGrpcService_serviceDesc, srv)
+func RegisterDictionaryManageGrpcServiceServer(s *grpc.Server, srv DictionaryManageGrpcServiceServer) {
+	s.RegisterService(&_DictionaryManageGrpcService_serviceDesc, srv)
 }
 
-func _DictionariesGrpcService_GetDictionaryList_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _DictionaryManageGrpcService_GetDictionaryList_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DictionaryListRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(DictionariesGrpcServiceServer).GetDictionaryList(ctx, in)
+		return srv.(DictionaryManageGrpcServiceServer).GetDictionaryList(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/DictionariesGrpcService/GetDictionaryList",
+		FullMethod: "/DictionaryManageGrpcService/GetDictionaryList",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DictionariesGrpcServiceServer).GetDictionaryList(ctx, req.(*DictionaryListRequest))
+		return srv.(DictionaryManageGrpcServiceServer).GetDictionaryList(ctx, req.(*DictionaryListRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _DictionariesGrpcService_CreateDictionaryItem_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _DictionaryManageGrpcService_CreateDictionaryItem_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DictionaryCreateRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(DictionariesGrpcServiceServer).CreateDictionaryItem(ctx, in)
+		return srv.(DictionaryManageGrpcServiceServer).CreateDictionaryItem(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/DictionariesGrpcService/CreateDictionaryItem",
+		FullMethod: "/DictionaryManageGrpcService/CreateDictionaryItem",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DictionariesGrpcServiceServer).CreateDictionaryItem(ctx, req.(*DictionaryCreateRequest))
+		return srv.(DictionaryManageGrpcServiceServer).CreateDictionaryItem(ctx, req.(*DictionaryCreateRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _DictionariesGrpcService_DeleteDictionaryItem_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _DictionaryManageGrpcService_DeleteDictionaryItem_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DictionaryDeleteRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(DictionariesGrpcServiceServer).DeleteDictionaryItem(ctx, in)
+		return srv.(DictionaryManageGrpcServiceServer).DeleteDictionaryItem(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/DictionariesGrpcService/DeleteDictionaryItem",
+		FullMethod: "/DictionaryManageGrpcService/DeleteDictionaryItem",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DictionariesGrpcServiceServer).DeleteDictionaryItem(ctx, req.(*DictionaryDeleteRequest))
+		return srv.(DictionaryManageGrpcServiceServer).DeleteDictionaryItem(ctx, req.(*DictionaryDeleteRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _DictionariesGrpcService_UpdateDictionaryItem_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _DictionaryManageGrpcService_UpdateDictionaryItem_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DictionaryUpdateRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(DictionariesGrpcServiceServer).UpdateDictionaryItem(ctx, in)
+		return srv.(DictionaryManageGrpcServiceServer).UpdateDictionaryItem(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/DictionariesGrpcService/UpdateDictionaryItem",
+		FullMethod: "/DictionaryManageGrpcService/UpdateDictionaryItem",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DictionariesGrpcServiceServer).UpdateDictionaryItem(ctx, req.(*DictionaryUpdateRequest))
+		return srv.(DictionaryManageGrpcServiceServer).UpdateDictionaryItem(ctx, req.(*DictionaryUpdateRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-var _DictionariesGrpcService_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "DictionariesGrpcService",
-	HandlerType: (*DictionariesGrpcServiceServer)(nil),
+var _DictionaryManageGrpcService_serviceDesc = grpc.ServiceDesc{
+	ServiceName: "DictionaryManageGrpcService",
+	HandlerType: (*DictionaryManageGrpcServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "GetDictionaryList",
-			Handler:    _DictionariesGrpcService_GetDictionaryList_Handler,
+			Handler:    _DictionaryManageGrpcService_GetDictionaryList_Handler,
 		},
 		{
 			MethodName: "CreateDictionaryItem",
-			Handler:    _DictionariesGrpcService_CreateDictionaryItem_Handler,
+			Handler:    _DictionaryManageGrpcService_CreateDictionaryItem_Handler,
 		},
 		{
 			MethodName: "DeleteDictionaryItem",
-			Handler:    _DictionariesGrpcService_DeleteDictionaryItem_Handler,
+			Handler:    _DictionaryManageGrpcService_DeleteDictionaryItem_Handler,
 		},
 		{
 			MethodName: "UpdateDictionaryItem",
-			Handler:    _DictionariesGrpcService_UpdateDictionaryItem_Handler,
+			Handler:    _DictionaryManageGrpcService_UpdateDictionaryItem_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "dictionaries_grpc_service.proto",
+	Metadata: "dictionary_manage_grpc_service.proto",
 }
